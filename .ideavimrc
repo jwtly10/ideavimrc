@@ -1,0 +1,44 @@
+source ~/.vimrc
+
+" Download Following plugins:
+" https://plugins.jetbrains.com/plugin/7086-acejump
+" https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion
+
+""""""""""""" PLUGINS """""""""""""
+set incsearch
+set easymotion
+set NERDTree
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+""""""""""""" KEY REMAPS """""""""""""
+let mapleader = ' '
+map Q gq
+nmap gD :action GoToImplementation<CR>
+nnoremap <SPACE> <Nop>
+map <RETURN> ciw
+vnoremap J ":m '>+1<CR>gv=gv"
+vnoremap K ":m '<-2<CR>gv=gv"
+map <leader>ps :action FindInPath<CR>
+map <leader>pf :action GoToFile<CR>
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <c-o> :action Back<CR>
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+""""""""""""" SETTINGS """""""""""""
+set scrolloff=5
+set relativenumber
